@@ -6,18 +6,18 @@ class GameManager {
     constructor(xPlayer, oPlayer) {
         this.xPlayer = xPlayer || 'Alice';
         this.oPlayer = oPlayer || 'Bob';
-        this.score = {
-            X: 0,
-            O: 0,
-            draw: 0
-        },
         // needed for 'this' scoping, otherwise 'this' will be the game
         this._gameListener = (result) => { this._updateScore(result); };
-        this._initGame(false);
+        this.reset();
     }
     
     reset() {
         this._initGame(false);
+        this.score = {
+            X: 0,
+            O: 0,
+            draw: 0
+        };
     }
     
     nextGame() {
