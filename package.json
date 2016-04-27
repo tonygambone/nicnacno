@@ -1,0 +1,20 @@
+{
+  "name": "nicnacno",
+  "version": "1.0.0",
+  "description": "Console-based tic-tac-toe game",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["game", "tictactoe", "console"],
+  "author": {
+    "name": "Tony Gambone",
+    "email": "tonygambone@gmail.com"
+  },
+  "bin": "./index.js",
+  "repository": "tonygambone/nicnacno",
+  "license": "ISC",
+  "dependencies": {
+    "colors": "^1.1.2"
+  }
+}
