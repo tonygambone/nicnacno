@@ -1,3 +1,5 @@
 #!/usr/bin/env Node
 
-require('../src/consoleGameRunner').run();
+const ConsoleGameRunner = require('../src/consoleGameRunner')
+var runner = new ConsoleGameRunner();
+runner.run();
