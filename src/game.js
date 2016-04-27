@@ -5,8 +5,8 @@ const EventEmitter = require('events');
 class Game extends EventEmitter {
     
     constructor(initialMove) {
-        if (initialMove !== undefined
-            && ['X','O'].indexOf(initialMove) == -1) throw new Error("Invalid initial move. Must be X or O");
+        if (initialMove !== undefined &&
+            ['X','O'].indexOf(initialMove) == -1) throw new Error("Invalid initial move. Must be X or O");
         super();
         this.result = undefined;
         this.board = [

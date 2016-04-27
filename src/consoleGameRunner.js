@@ -20,16 +20,16 @@ class ConsoleGameRunner {
         this._promptNames(() => {
             this._gameLoop(() => {
                 this._rl.close();
-            })
+            });
         });
     }
     
     _promptNames(cb) {
         this._rl.question('X player\'s name? ', (a) => {
-            if (a != '') this._gm.xPlayer = a;
+            if (a !== '') this._gm.xPlayer = a;
             
             this._rl.question('O player\'s name? ', (a) => {
-                if (a != '') this._gm.oPlayer = a;
+                if (a !== '') this._gm.oPlayer = a;
                 
                 if (cb) cb();
             });

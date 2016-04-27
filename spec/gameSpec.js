@@ -29,11 +29,13 @@ describe("Game", () => {
     (function() {
         var game = new Game();
         for (var i = 1; i < 9; i++) {
+            /*jshint -W083 */
             (function(val) {
                 it("should accept " + val + " as a valid move", () => {
                     expect(game.isValidMove(val)).toBeTruthy();
                 });
             })(i);
+            /*jshint +W083 */
         }
     })();
     
@@ -41,11 +43,13 @@ describe("Game", () => {
         var game = new Game();
         var moves = ['0', 0, false, 'X', 'O', 'zzz', 'true', 99, -100, 'false', true, 't', [1,2,3], {a: 'foo', b: 1}];
         for (var i = 0; i < moves.length; i++) {
+            /*jshint -W083 */
             (function(val) {
                 it("should not accept " + val + " as a valid move", () => {
                     expect(game.isValidMove(val)).toBeFalsy();
                 });
             })(moves[i]);
+            /*jshint +W083 */
         }
     })();
     
@@ -195,12 +199,14 @@ describe("Game", () => {
             { moves: [1,4,2,5,6,3,7,8,9], result: 'draw' }
         ];
         for (var i = 0; i < games.length; i++) {
+            /*jshint -W083 */
             (function(val) {
                 it("should run game " + val.moves + " => " + val.result + " properly", () => {
                     var game = new Game();
                     // all but last move
+                    var applyResult;
                     for (var i = 0; i < val.moves.length - 1; i++) {
-                        var applyResult = game.applyMove(val.moves[i]);
+                        applyResult = game.applyMove(val.moves[i]);
                         expect(applyResult).toBeFalsy();
                         expect(game.result).toBeUndefined();
                     }
@@ -209,6 +215,7 @@ describe("Game", () => {
                     expect(game.result).toBe(val.result);
                 });
             })(games[i]);
+            /*jshint +W083 */
         }
     })();
 });

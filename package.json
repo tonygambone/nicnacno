@@ -4,6 +4,7 @@
   "description": "Console-based tic-tac-toe game",
   "main": "index.js",
   "scripts": {
+    "pretest": "jshint .",
     "test": "node ./spec/support/runTests.js"
   },
   "keywords": [
@@ -24,6 +25,7 @@
     "colors": "^1.1.2"
   },
   "devDependencies": {
-    "jasmine": "^2.4.1"
+    "jasmine": "^2.4.1",
+    "jshint": "^2.9.2"
   }
 }
